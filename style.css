@@ -1,0 +1,51 @@
+* {
+    background-color: rgb(7, 122, 125);
+    color: rgb(253, 235, 158);
+    text-align: center;
+    margin: 2px;
+    /* font-size: large; */
+}
+
+button {
+    width: 64px;
+    height: 64px;
+    border: solid, 2px, rgb(6, 32, 43);
+    border-radius: 5px;
+    background-color: rgb(253, 235, 158);
+    color: rgb(6, 32, 43);
+}
+
+#btnEquals {
+    background-color: rgb(6, 32, 43);
+    color: rgb(253, 235, 158);
+    border: solid, 2px, rgb(253, 235, 158);
+    border-radius: 5px;    
+}
+
+#btnC {
+    background-color: rgb(6, 32, 43);
+    color: rgb(253, 235, 158);
+    border: solid, 2px, rgb(253, 235, 158);
+    border-radius: 5px;
+}
+
+.operators {
+    background-color: rgb(122, 226, 207); 
+    border: solid, 2px, rgb(6, 32, 43);
+    border-radius: 5px;
+}
+
+.result_div{
+    display: flex;
+    justify-content: center; 
+    width: 276px;
+    height: 96px;
+    align-items: center;
+    align-content: center;
+    border: solid, 2px, rgb(253, 235, 158);
+    border-radius: 5px;
+    margin: 0 auto;  
+    background-color: rgb(6, 32, 43);
+    font-size: 24px;
+    
+}
