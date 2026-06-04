@@ -24,11 +24,28 @@ function operate(a, operator, b) {
     operator = operator;
     num2 = b;
 
-    operator === "+" ? add(num1, num2) :
-    operator === "-" ? subtract(num1, num2) :
-    operator === "*" ? multiply(num1, num2) :
-    operator === "/" ? divide(num1, num2) :
-    null;
+    switch (operator) {
+        case "+":
+            add(num1, num2);
+            break;
+        case "-":
+            subtract(num1, num2);
+            break;
+        case "*":
+            multiply(num1, num2);
+            break;
+        case "/":
+            divide(num1, num2);
+            break;
+        default:
+            console.log("error !!!!!")    
+            
+    }
+    // operator === "+" ? add(num1, num2) :
+    // operator === "-" ? subtract(num1, num2) :
+    // operator === "*" ? multiply(num1, num2) :
+    // operator === "/" ? divide(num1, num2) :
+    // null;
 
 }
 
