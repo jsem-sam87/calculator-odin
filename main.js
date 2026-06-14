@@ -3,6 +3,27 @@ let num1;
 let operator;
 let num2; 
 
+
+const result_div = document.querySelector(".result_div");
+const btn0 = document.getElementById("btn0");
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const btn3 = document.getElementById("btn3");
+const btn4 = document.getElementById("btn4");
+const btn5 = document.getElementById("btn5");
+const btn6 = document.getElementById("btn6");
+const btn7 = document.getElementById("btn7");
+const btn8 = document.getElementById("btn8");
+const btn9 = document.getElementById("btn9");
+const btnC = document.getElementById("btnC");
+const btnAdd = document.getElementById("btnAdd");
+const btnSubtract = document.getElementById("btnSubtract");
+const btnMultiply = document.getElementById("btnMultiply");
+const btnDivide = document.getElementById("btnDivide");
+const btnEquals = document.getElementById("btnEquals");
+
+let operator_choosed = false;
+
 function add(a, b) {
     return res = a + b;    
 }
@@ -61,3 +82,15 @@ function operate(a, operator, b) {
 // console.log(res);
 // add(5,4);
 // console.log(res);
+
+function funC() {
+    result_div.innerHTML = "";
+}
+
+function addNum(button) {
+    result_div.innerHTML += button.innerHTML;
+}
+
+function addOperator(button) {
+    result_div.innerHTML += button.innerHTML;
+}
