@@ -85,12 +85,17 @@ function operate(a, operator, b) {
 
 function funC() {
     result_div.innerHTML = "";
+    operator_choosed = true;
 }
 
 function addNum(button) {
     result_div.innerHTML += button.innerHTML;
+    operator_choosed = false;
 }
 
 function addOperator(button) {
-    result_div.innerHTML += button.innerHTML;
+    if (operator_choosed == false) {
+        result_div.innerHTML += button.innerHTML;
+        operator_choosed = true;
+    }
 }
