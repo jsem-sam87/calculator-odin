@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <div class="result_div">3 + 5 = 8</div>
+    <div class="result_div"></div>
     <div class="button_div">
         <div class="button_div_line">
             <button id="btn7" onclick="addNum(this)">7</button>
@@ -32,7 +32,7 @@
         <div class="button_div_line">
             <button id="btnC" onclick="funC()">C</button>
             <button id="btn0" onclick="addNum(this)">0</button>
-            <button id="btnEquals">=</button>
+            <button id="btnEquals" onclick="funEquals()">=</button>
             <button id="btnDivide" class="operators" onclick="addOperator(this)">/</button>
         </div>               
     </div>

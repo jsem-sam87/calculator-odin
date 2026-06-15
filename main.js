@@ -23,6 +23,8 @@ const btnDivide = document.getElementById("btnDivide");
 const btnEquals = document.getElementById("btnEquals");
 
 let operator_choosed = false;
+let first_num_choosed = false;
+
 
 function add(a, b) {
     return res = a + b;    
@@ -85,17 +87,32 @@ function operate(a, operator, b) {
 
 function funC() {
     result_div.innerHTML = "";
-    operator_choosed = true;
+    operator_choosed = false;
 }
 
 function addNum(button) {
     result_div.innerHTML += button.innerHTML;
-    operator_choosed = false;
+    // operator_choosed = false;
+    first_num_choosed = true;
 }
 
 function addOperator(button) {
-    if (operator_choosed == false) {
+    if (operator_choosed == false && first_num_choosed) {
         result_div.innerHTML += button.innerHTML;
         operator_choosed = true;
+        operator = `${button.innerHTML}`;
     }
 }
+
+function funEquals(){
+    let the_formula_array = result_div.innerHTML.split(/[+\-*/]/);
+    first_num = the_formula_array[0];
+    second_num = the_formula_array[1];
+
+    operate(Number(first_num), operator, Number(second_num));
+    //console.log(res);
+    result_div.innerHTML = res;
+    operator_choosed == false
+}
+
+
