@@ -24,6 +24,7 @@ const btnEquals = document.getElementById("btnEquals");
 
 let operator_choosed = false;
 let first_num_choosed = false;
+// let calculation_happened = false;
 
 
 function add(a, b) {
@@ -88,12 +89,17 @@ function operate(a, operator, b) {
 function funC() {
     result_div.innerHTML = "";
     operator_choosed = false;
+    first_num_choosed = false;
 }
 
 function addNum(button) {
     result_div.innerHTML += button.innerHTML;
     // operator_choosed = false;
     first_num_choosed = true;
+    // if (calculation_happened) {
+    //     result_div.innerHTML = `${Number(this.innerHTML)}`;
+    // }
+    // calculation_happened = false;
 }
 
 function addOperator(button) {
@@ -105,14 +111,35 @@ function addOperator(button) {
 }
 
 function funEquals(){
+    // if (result_div.innerHTML.includes("/[+\-*/]/)") == false){
+    //     result_div.innerHTML = ""
+    // }
     let the_formula_array = result_div.innerHTML.split(/[+\-*/]/);
     first_num = the_formula_array[0];
+    num1 = first_num;
     second_num = the_formula_array[1];
+    num2 = second_num;
 
-    operate(Number(first_num), operator, Number(second_num));
+    operate(Number(num1), operator, Number(num2));
     //console.log(res);
     result_div.innerHTML = res;
-    operator_choosed == false
+    num1 = res;
+    first_num_choosed = true;
+    operator_choosed == false;
+
+    // calculation_happened = true;
 }
 
+// if (res == ("NaN" || "undefined" || "Infinity" ))
+// {
+//     result_div.innerHTML = "Error";
+// }
 
+
+
+// fix next time: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/*
+I can add extra content after the outpus is Nan, undefined or infinity.
+
+cannot use the result as the first num
+*/
