@@ -142,6 +142,17 @@ function funEquals(){
     
     operate(Number(num1), operator, Number(num2));
     //console.log(res);
+
+    if (isNaN(res) || res === Infinity || res === -Infinity) {
+        result_div.innerHTML = "Error!";
+        first_num_choosed = false;
+        calculation_happened = true;
+        return;
+    }
+    else {
+        res = Number(res.toFixed(2));
+    }
+
     result_div.innerHTML = res;
     num1 = res;
     first_num_choosed = true;
@@ -150,12 +161,12 @@ function funEquals(){
 
     calculation_happened = true;
 
-    if (isNaN(res) || res === Infinity || res === -Infinity) {
-        result_div.innerHTML = "Error!";
-        first_num_choosed = false;
-        calculation_happened = true;
-        return;
-    }
+    // if (isNaN(res) || res === Infinity || res === -Infinity) {
+    //     result_div.innerHTML = "Error!";
+    //     first_num_choosed = false;
+    //     calculation_happened = true;
+    //     return;
+    // }
 }
 
 // if (res == ("NaN" || "undefined" || "Infinity" ))
@@ -167,5 +178,5 @@ function funEquals(){
 
 // fix next: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /*
-    round the decimals of res 
+    doesnt work when i wanna use negative res for calculation
 */
