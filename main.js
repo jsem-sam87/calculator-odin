@@ -135,10 +135,19 @@ function funEquals(){
     //     result_div.innerHTML = ""
     // }
     let the_formula_array = result_div.innerHTML.split(/[+\-*/]/);
-    first_num = the_formula_array[0];
-    num1 = first_num;
-    second_num = the_formula_array[1];
-    num2 = second_num;
+
+    if (the_formula_array[0] === ""){
+        num1 = "-" + the_formula_array[1];
+        num2 = the_formula_array[2];
+    } else {
+        num1 = the_formula_array[0];
+        num2 = the_formula_array[1];
+    }
+
+    // first_num = the_formula_array[0];
+    // num1 = first_num;
+    // second_num = the_formula_array[1];
+    // num2 = second_num;
     
     operate(Number(num1), operator, Number(num2));
     //console.log(res);
