@@ -112,10 +112,15 @@ function addNum(button) {
 }
 
 function addOperator(button) {
-    if (calculation_happened) {
+    if (result_div.innerHTML === "Error!")
+    {
         result_div.innerHTML = "";
+    }
+    if (calculation_happened) {
+        // result_div.innerHTML = "";
         calculation_happened = false;
         operators_choosed = 0;
+        operator_choosed = false;
     }
     if (operator_choosed == false && operators_choosed < operator_limit && first_num_choosed) {
         result_div.innerHTML += button.innerHTML;
@@ -144,6 +149,13 @@ function funEquals(){
     operators_choosed = 0;
 
     calculation_happened = true;
+
+    if (isNaN(res) || res === Infinity || res === -Infinity) {
+        result_div.innerHTML = "Error!";
+        first_num_choosed = false;
+        calculation_happened = true;
+        return;
+    }
 }
 
 // if (res == ("NaN" || "undefined" || "Infinity" ))
@@ -153,9 +165,7 @@ function funEquals(){
 
 
 
-// fix next time: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// fix next: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 /*
-I can add extra content after the outpus is Nan, undefined or infinity.
-
-cannot use the result as the first num
+    round the decimals of res 
 */
